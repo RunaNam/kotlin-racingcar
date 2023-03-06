@@ -16,4 +16,3 @@ object InputView {
         return input.toInt()
     }
 }
-
