@@ -8,7 +8,7 @@ fun main() {
 
     OutputView.printResultTitle()
     for (i in 1..raceCount) {
-        cars.moveAll()
+        cars.operateAll()
         OutputView.printRaceResult(cars)
     }
 

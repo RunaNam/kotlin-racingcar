@@ -8,14 +8,14 @@ class Cars(names: List<String>) {
         value = names.map { Car(it) }
     }
 
-    fun moveAll() {
+    fun operateAll() {
         for (car in value) {
-            car.move()
+            car.moveOrStay()
         }
     }
 
     fun findWinners(): List<Car> {
-        val winnerPosition = value.maxOf { it.position }
-        return value.filter { it.position == winnerPosition }
+        val winnerPosition = value.maxOf { it.getPosition() }
+        return value.filter { it.getPosition() == winnerPosition }
     }
 }

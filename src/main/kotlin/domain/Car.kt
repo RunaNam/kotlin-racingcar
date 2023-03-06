@@ -2,19 +2,21 @@ package domain
 
 import utils.RandomUtil
 
-class Car(val name: String) {
-
-    var position: Int = 0
+class Car(val name: String, private var position: Int = 0) {
 
     init {
         require(name.isNotBlank()) { "이름은 공백일 수 없습니다." }
         require(name.length <= NAME_MIN_LENGTH) { "자동차 이름의 길이는 1~5자여야 합니다." }
     }
 
-    fun move() {
+    fun moveOrStay() {
         if (RandomUtil.getRandomNumber(BOUND) >= MOVE_STRATEGY) {
             position++
         }
+    }
+
+    fun getPosition(): Int {
+        return position;
     }
 
     companion object {
