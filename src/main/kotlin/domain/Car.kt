@@ -2,7 +2,10 @@ package domain
 
 import utils.RandomUtil
 
-class Car(val name: String, private var position: Int = 0) {
+class Car(val name: String) {
+
+    var position: Int = 0
+        private set
 
     init {
         require(name.isNotBlank()) { "이름은 공백일 수 없습니다." }
@@ -13,10 +16,6 @@ class Car(val name: String, private var position: Int = 0) {
         if (RandomUtil.getRandomNumber(BOUND) >= MOVE_STRATEGY) {
             position++
         }
-    }
-
-    fun getPosition(): Int {
-        return position;
     }
 
     companion object {

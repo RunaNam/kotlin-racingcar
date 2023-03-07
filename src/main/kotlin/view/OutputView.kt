@@ -18,7 +18,7 @@ object OutputView {
 
     fun printRaceResult(cars: Cars) {
         for (car in cars.value) {
-            println("${car.name} : ${DASH.repeat(car.getPosition())}")
+            println("${car.name} : ${DASH.repeat(car.position)}")
         }
         println()
     }
