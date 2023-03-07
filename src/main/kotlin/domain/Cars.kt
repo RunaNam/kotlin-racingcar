@@ -9,9 +9,7 @@ class Cars(names: List<String>) {
     }
 
     fun operateAll() {
-        for (car in value) {
-            car.moveOrStay()
-        }
+        value.forEach(Car::moveOrStay)
     }
 
     fun findWinners(): List<Car> {
