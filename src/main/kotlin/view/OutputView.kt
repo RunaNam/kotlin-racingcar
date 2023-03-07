@@ -3,7 +3,6 @@ package view
 import domain.Car
 import domain.Cars
 
-private const val COLON = " : "
 private const val DASH = "-"
 
 object OutputView {
@@ -18,8 +17,8 @@ object OutputView {
     }
 
     fun printRaceResult(cars: Cars) {
-        cars.value.forEach {
-            println(it.name + COLON + DASH.repeat(it.position))
+        for (car in cars.value) {
+            println("${car.name} : ${DASH.repeat(car.getPosition())}")
         }
         println()
     }
