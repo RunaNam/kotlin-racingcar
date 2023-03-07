@@ -16,16 +16,14 @@ fun main() {
 }
 
 
-private fun getCars(): Cars {
-    return try {
+private fun getCars(): Cars =
+    try {
         val carNames = InputView.inputCarNames()
         Cars(carNames)
     } catch (e: RuntimeException) {
         OutputView.printException(e)
         getCars()
     }
-
-}
 
 private fun getRaceCount(): Int {
     return try {
