@@ -11,7 +11,7 @@ object InputView {
         println("시도할 회수는 몇회인가요?")
 
         val input = readln()
-        validTryCount(input)
+        InputValidation.validTryCount(input)
 
         return input.toInt()
     }
